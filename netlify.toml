@@ -1,0 +1,15 @@
+# Netlify Configuration
+[build]
+  command = "bun run build"
+  publish = "dist"
+
+[build.environment]
+  # Omit public/client-side keys from secrets scanning
+  # These keys are intentionally public and embedded in the client bundle
+  SECRETS_SCAN_OMIT_KEYS = "SUPABASE_PUBLISHABLE_KEY,VITE_SUPABASE_ANON_KEY,VITE_SUPABASE_URL,VITE_EMAILJS_PUBLIC_KEY,VITE_EMAILJS_SERVICE_ID,VITE_EMAILJS_TEMPLATE_ID"
+
+# Redirect rules (if needed in the future)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
