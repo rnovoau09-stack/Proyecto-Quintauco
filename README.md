@@ -1,73 +1,63 @@
-# Welcome to your Lovable project
+# Bike Park Pioneer
 
-## Project info
+Este proyecto es una aplicación web para la gestión y promoción de un parque de bicicletas (Bike Park) llamado "Pioneer". Incluye funcionalidades como presentación de actividades, información de condominios, contacto, mapas, galería y más.
 
-**URL**: https://lovable.dev/projects/9803fa4f-a2cf-433d-a477-9b975804c6b1
+## Características principales
+- Página principal con información del parque y actividades.
+- Formulario de contacto integrado con EmailJS.
+- Integración con Supabase para backend y almacenamiento.
+- Galería de imágenes y mapas interactivos.
+- Soporte para temas claro/oscuro y cambio de idioma (español/inglés).
+- Componentes reutilizables y diseño responsivo usando Tailwind CSS.
 
-## How can I edit this code?
+## Estructura del proyecto
+- `src/` - Código fuente principal.
+  - `components/` - Componentes React reutilizables.
+  - `contexts/` - Contextos globales (tema, idioma).
+  - `hooks/` - Hooks personalizados.
+  - `integrations/supabase/` - Configuración y tipos de Supabase.
+  - `lib/` - Utilidades generales.
+  - `pages/` - Páginas principales de la app.
+  - `services/` - Servicios externos (ej. email).
+  - `utils/` - Utilidades varias.
+- `public/` - Archivos públicos y recursos estáticos.
+- `supabase/` - Funciones y configuración de Supabase.
 
-There are several ways of editing your application.
+## Instalación y uso
+1. Clona el repositorio:
+   ```bash
+   git clone <url-del-repo>
+   cd bike-park-pioneer-main
+   ```
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Configura las variables de entorno necesarias para Supabase y EmailJS (ver documentación interna).
+4. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/9803fa4f-a2cf-433d-a477-9b975804c6b1) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
+## Dependencias principales
 - React
-- shadcn-ui
+- Vite
 - Tailwind CSS
+- Supabase
+- EmailJS
 
-## How can I deploy this project?
+## Despliegue
+El proyecto está preparado para ser desplegado en Netlify u otras plataformas compatibles con Vite.
 
-Simply open [Lovable](https://lovable.dev/projects/9803fa4f-a2cf-433d-a477-9b975804c6b1) and click on Share -> Publish.
+## Seguridad y buenas prácticas
+- **No subas archivos con credenciales sensibles** (API keys, secretos, etc.) al repositorio público.
+- Revisa que los archivos de configuración (como `.env`) estén en `.gitignore`.
+- El código fuente actual parece seguro para subir a GitHub **siempre y cuando no incluyas archivos de configuración sensibles**.
 
-## Can I connect a custom domain to my Lovable project?
+## Licencia
+[MIT](LICENSE)
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Contacto
+Para dudas o soporte, contacta a los administradores del proyecto.

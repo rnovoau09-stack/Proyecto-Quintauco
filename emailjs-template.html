@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Mensaje - Quintauco</title>
+</head>
+
+<body
+    style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f4;">
+    <table role="presentation" style="width: 100%; border-collapse: collapse; background-color: #f4f4f4;">
+        <tr>
+            <td align="center" style="padding: 40px 0;">
+                <table role="presentation"
+                    style="width: 600px; border-collapse: collapse; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden;">
+
+                    <!-- Header -->
+                    <tr>
+                        <td
+                            style="background: linear-gradient(135deg, #2c5f2d 0%, #97bc62 100%); padding: 40px 30px; text-align: center;">
+                            <h1
+                                style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 600; letter-spacing: -0.5px;">
+                                Quintauco Bike Park
+                            </h1>
+                            <p style="margin: 10px 0 0 0; color: #e8f5e9; font-size: 14px; font-weight: 300;">
+                                Nuevo mensaje de contacto
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 40px 30px;">
+                            <p style="margin: 0 0 30px 0; color: #333333; font-size: 16px; line-height: 1.6;">
+                                Has recibido un nuevo mensaje desde el formulario de contacto:
+                            </p>
+
+                            <!-- Information Cards -->
+                            <table role="presentation"
+                                style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <tr>
+                                    <td
+                                        style="padding: 15px; background-color: #f8f9fa; border-left: 4px solid #2c5f2d; margin-bottom: 10px;">
+                                        <p
+                                            style="margin: 0 0 5px 0; color: #666666; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">
+                                            Nombre
+                                        </p>
+                                        <p style="margin: 0; color: #333333; font-size: 16px; font-weight: 500;">
+                                            {{from_name}}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table role="presentation"
+                                style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <tr>
+                                    <td
+                                        style="padding: 15px; background-color: #f8f9fa; border-left: 4px solid #2c5f2d;">
+                                        <p
+                                            style="margin: 0 0 5px 0; color: #666666; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">
+                                            Email
+                                        </p>
+                                        <p style="margin: 0; color: #333333; font-size: 16px; font-weight: 500;">
+                                            <a href="mailto:{{reply_to}}"
+                                                style="color: #2c5f2d; text-decoration: none;">
+                                                {{reply_to}}
+                                            </a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table role="presentation"
+                                style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                                <tr>
+                                    <td
+                                        style="padding: 15px; background-color: #f8f9fa; border-left: 4px solid #2c5f2d;">
+                                        <p
+                                            style="margin: 0 0 5px 0; color: #666666; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">
+                                            Teléfono
+                                        </p>
+                                        <p style="margin: 0; color: #333333; font-size: 16px; font-weight: 500;">
+                                            {{phone}}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table role="presentation"
+                                style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                                <tr>
+                                    <td
+                                        style="padding: 20px; background-color: #f8f9fa; border-left: 4px solid #2c5f2d; border-radius: 4px;">
+                                        <p
+                                            style="margin: 0 0 10px 0; color: #666666; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">
+                                            Mensaje
+                                        </p>
+                                        <p
+                                            style="margin: 0; color: #333333; font-size: 15px; line-height: 1.7; white-space: pre-wrap;">
+                                            {{message}}</p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Call to Action -->
+                            <table role="presentation"
+                                style="width: 100%; border-collapse: collapse; margin-top: 30px;">
+                                <tr>
+                                    <td align="center" style="padding: 20px 0;">
+                                        <a href="mailto:{{reply_to}}"
+                                            style="display: inline-block; padding: 14px 35px; background-color: #2c5f2d; color: #ffffff; text-decoration: none; border-radius: 6px; font-size: 16px; font-weight: 600; transition: background-color 0.3s;">
+                                            Responder al Cliente
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td
+                            style="background-color: #f8f9fa; padding: 30px; text-align: center; border-top: 1px solid #e0e0e0;">
+                            <p style="margin: 0 0 10px 0; color: #666666; font-size: 13px; line-height: 1.6;">
+                                Este mensaje fue enviado desde el formulario de contacto de<br>
+                                <strong style="color: #2c5f2d;">Quintauco Bike Park</strong>
+                            </p>
+                            <p style="margin: 10px 0 0 0; color: #999999; font-size: 12px;">
+                                © 2026 Quintauco. Todos los derechos reservados.
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

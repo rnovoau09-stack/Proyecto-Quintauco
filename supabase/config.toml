@@ -1,1 +1,12 @@
-project_id = "ivekdnhcyqbkavpromnr"
+[project]
+id = "vbbxzoacbnfandopnwbr"
+
+[functions.send-confirmation]
+# Public form uses anon session; allow unauthenticated calls
+verify_jwt = false
+
+
+
+
+
+

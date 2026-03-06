@@ -1,92 +1,121 @@
-import { MapPin, Mail, Phone } from "lucide-react";
+import { MapPin, Mail, Phone, MessageSquare } from "lucide-react";
 import { Button } from "./ui/button";
-import InquiryDialog from "./InquiryDialog";
 import { Card } from "./ui/card";
+import { AspectRatio } from "./ui/aspect-ratio";
+import ContactForm from "./ContactForm";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { FadeIn } from "./animations/FadeIn";
 
 const Contacto = () => {
+  const { t } = useLanguage();
   return (
-    <section id="contacto" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Contacto
+    <section id="contacto" className="py-20 md:py-28 bg-background relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <FadeIn className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary font-medium text-sm mb-6 border border-primary/20">
+              <MessageSquare className="w-4 h-4" />
+              <span>Contacto</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              {t('contact.title')}
             </h2>
-            <p className="text-lg text-muted-foreground">
-              ¿Interesado en el proyecto? Contáctanos para más información
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+              {t('contact.subtitle')}
             </p>
-          </div>
+          </FadeIn>
 
-          <Card className="p-8 md:p-12">
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div>
-                <h3 className="text-2xl font-bold text-foreground mb-6">
-                  Información del Proyecto
-                </h3>
-                
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-medium text-foreground">Ubicación</p>
-                      <p className="text-sm text-muted-foreground">
-                        Fundo Las Palmas, Santa Julia<br />
-                        Quintero, Región de Valparaíso, Chile
-                      </p>
-                    </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Columna izquierda: Información de contacto y mapa */}
+            <FadeIn className="space-y-6">
+              <div className="p-6 md:p-8 bg-card rounded-xl border border-border shadow-md">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <MessageSquare className="h-6 w-6 text-primary" />
                   </div>
-
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground">{t('contact.infoTitle')}</h3>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <Mail className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">Email</p>
+                      <p className="font-semibold text-sm text-foreground mb-1">{t('contact.email')}</p>
                       <p className="text-sm text-muted-foreground">
-                        info@info.cl
+                        info@quintauco.cl
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">Teléfono</p>
+                      <p className="font-semibold text-sm text-foreground mb-1">{t('contact.phone')}</p>
                       <p className="text-sm text-muted-foreground">
-                        +56 9 XXXX XXXX
+                        {t('contact.general')}: +56 9 9228 3007
                       </p>
                     </div>
                   </div>
-                </div>
-              </div>
 
-              <div className="bg-gradient-to-br from-primary to-accent rounded-xl p-6 text-white">
-                <h4 className="text-xl font-bold mb-4">Inversiones Yellowstone SpA</h4>
-                <p className="text-sm text-white/90 mb-4">
-                  Sociedad promotora del Proyecto Quintauco
-                </p>
-                <div className="space-y-2 text-sm">
-                  <p><strong>Gestión Operativa:</strong></p>
-                  <p className="text-white/90">Rodrigo Novoa</p>
-                  <p className="text-white/90">Marcelo Mondaca</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center pt-6 border-t border-border">
-              <InquiryDialog
-                trigger={
-                  <Button variant="hero" size="lg">
-                    Solicitar Más Información
+                  <Button
+                    className="w-full bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-lg py-3 text-base font-semibold shadow-md hover:shadow-lg transition-all"
+                    size="lg"
+                    onClick={() => {
+                      const phoneNumber = "+56 9 9228 3007";
+                      const message = "Hola! Me gustaría obtener más información.";
+                      const formattedNumber = phoneNumber.replace(/[\s\-+]/g, "");
+                      const encodedMessage = encodeURIComponent(message);
+                      const whatsappUrl = `https://wa.me/${formattedNumber}?text=${encodedMessage}`;
+                      window.open(whatsappUrl, "_blank");
+                    }}
+                  >
+                    {t('contact.whatsapp')}
                   </Button>
-                }
-              />
-            </div>
-          </Card>
+                </div>
+              </div>
+
+              <Card className="p-6 sm:p-8 bg-card/97 backdrop-blur-xl border-2 border-border/70 shadow-premium hover:shadow-premium-lg hover:border-primary/40 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
+                    <MapPin className="h-6 w-6 sm:h-7 sm:w-7 text-accent" />
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground dark:text-card-foreground">{t('contact.locationTitle')}</h3>
+                </div>
+                <div className="rounded-2xl overflow-hidden border-2 border-border/50 shadow-lg">
+                  <AspectRatio ratio={16 / 9}>
+                    <iframe
+                      src="https://www.google.com/maps?q=Quintauco,+F-30-E,+Quintero,+Valpara%C3%ADso,+Chile&z=15&output=embed"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
+                  </AspectRatio>
+                </div>
+                <p className="text-xs sm:text-sm text-muted-foreground dark:text-muted-foreground mt-3 sm:mt-4 font-medium">
+                  {t('contact.address')}
+                </p>
+              </Card>
+            </FadeIn>
+
+            {/* Columna derecha: Formulario de contacto */}
+            <FadeIn delay={0.2}>
+              <Card className="p-6 sm:p-8 bg-card/97 backdrop-blur-xl border-2 border-border/70 shadow-premium hover:shadow-premium-lg hover:border-primary/40 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                    <MessageSquare className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground dark:text-card-foreground">{t('contact.formTitle')}</h3>
+                </div>
+                <ContactForm />
+              </Card>
+            </FadeIn>
+          </div>
         </div>
       </div>
     </section>
@@ -94,3 +123,4 @@ const Contacto = () => {
 };
 
 export default Contacto;
+
