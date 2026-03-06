@@ -5,7 +5,7 @@ import "./index.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 
 createRoot(document.getElementById("root")!).render(
-    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
-        <App />
-    </ThemeProvider>
+  <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+    <App />
+  </ThemeProvider>,
 );

@@ -9,7 +9,10 @@ import { FadeIn } from "./animations/FadeIn";
 const Contacto = () => {
   const { t } = useLanguage();
   return (
-    <section id="contacto" className="py-20 md:py-28 bg-background relative overflow-hidden">
+    <section
+      id="contacto"
+      className="py-20 md:py-28 bg-background relative overflow-hidden"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <FadeIn className="text-center mb-16">
@@ -18,10 +21,10 @@ const Contacto = () => {
               <span>Contacto</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
-              {t('contact.title')}
+              {t("contact.title")}
             </h2>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              {t('contact.subtitle')}
+              {t("contact.subtitle")}
             </p>
           </FadeIn>
 
@@ -33,7 +36,9 @@ const Contacto = () => {
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                     <MessageSquare className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground">{t('contact.infoTitle')}</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                    {t("contact.infoTitle")}
+                  </h3>
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3 p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors">
@@ -41,7 +46,9 @@ const Contacto = () => {
                       <Mail className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold text-sm text-foreground mb-1">{t('contact.email')}</p>
+                      <p className="font-semibold text-sm text-foreground mb-1">
+                        {t("contact.email")}
+                      </p>
                       <p className="text-sm text-muted-foreground">
                         info@quintauco.cl
                       </p>
@@ -53,9 +60,11 @@ const Contacto = () => {
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold text-sm text-foreground mb-1">{t('contact.phone')}</p>
+                      <p className="font-semibold text-sm text-foreground mb-1">
+                        {t("contact.phone")}
+                      </p>
                       <p className="text-sm text-muted-foreground">
-                        {t('contact.general')}: +56 9 9228 3007
+                        {t("contact.general")}: +56 9 9228 3007
                       </p>
                     </div>
                   </div>
@@ -65,14 +74,18 @@ const Contacto = () => {
                     size="lg"
                     onClick={() => {
                       const phoneNumber = "+56 9 9228 3007";
-                      const message = "Hola! Me gustaría obtener más información.";
-                      const formattedNumber = phoneNumber.replace(/[\s\-+]/g, "");
+                      const message =
+                        "Hola! Me gustaría obtener más información.";
+                      const formattedNumber = phoneNumber.replace(
+                        /[\s\-+]/g,
+                        "",
+                      );
                       const encodedMessage = encodeURIComponent(message);
                       const whatsappUrl = `https://wa.me/${formattedNumber}?text=${encodedMessage}`;
                       window.open(whatsappUrl, "_blank");
                     }}
                   >
-                    {t('contact.whatsapp')}
+                    {t("contact.whatsapp")}
                   </Button>
                 </div>
               </div>
@@ -82,7 +95,9 @@ const Contacto = () => {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
                     <MapPin className="h-6 w-6 sm:h-7 sm:w-7 text-accent" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground dark:text-card-foreground">{t('contact.locationTitle')}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground dark:text-card-foreground">
+                    {t("contact.locationTitle")}
+                  </h3>
                 </div>
                 <div className="rounded-2xl overflow-hidden border-2 border-border/50 shadow-lg">
                   <AspectRatio ratio={16 / 9}>
@@ -98,7 +113,7 @@ const Contacto = () => {
                   </AspectRatio>
                 </div>
                 <p className="text-xs sm:text-sm text-muted-foreground dark:text-muted-foreground mt-3 sm:mt-4 font-medium">
-                  {t('contact.address')}
+                  {t("contact.address")}
                 </p>
               </Card>
             </FadeIn>
@@ -110,7 +125,9 @@ const Contacto = () => {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
                     <MessageSquare className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-foreground dark:text-card-foreground">{t('contact.formTitle')}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold text-foreground dark:text-card-foreground">
+                    {t("contact.formTitle")}
+                  </h3>
                 </div>
                 <ContactForm />
               </Card>
@@ -123,4 +140,3 @@ const Contacto = () => {
 };
 
 export default Contacto;
-

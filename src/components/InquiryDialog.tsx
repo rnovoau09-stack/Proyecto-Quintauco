@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription } from "./ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogDescription,
+} from "./ui/dialog";
 import ContactForm from "./ContactForm";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -18,10 +25,8 @@ const InquiryDialog = ({ trigger }: InquiryDialogProps) => {
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{t('inquiry.title')}</DialogTitle>
-          <DialogDescription>
-            {t('inquiry.description')}
-          </DialogDescription>
+          <DialogTitle>{t("inquiry.title")}</DialogTitle>
+          <DialogDescription>{t("inquiry.description")}</DialogDescription>
         </DialogHeader>
         <ContactForm onSuccess={() => setOpen(false)} />
       </DialogContent>
@@ -30,5 +35,3 @@ const InquiryDialog = ({ trigger }: InquiryDialogProps) => {
 };
 
 export default InquiryDialog;
-
-

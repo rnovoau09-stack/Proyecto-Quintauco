@@ -7,7 +7,6 @@ All colors MUST be HSL.
 */
 
 @layer base {
-
   /* Theme transition class - instant theme changes */
   .theme-transition,
   .theme-transition *,
@@ -51,15 +50,31 @@ All colors MUST be HSL.
     --radius: 0.875rem;
 
     /* Enhanced design tokens - Modern Hero UI */
-    --hero-gradient: linear-gradient(135deg, hsl(166 50% 48%) 0%, hsl(166 52% 42%) 50%, hsl(166 48% 38%) 100%);
-    --accent-gradient: linear-gradient(90deg, hsl(24 96% 53%) 0%, hsl(30 95% 58%) 50%, hsl(35 95% 60%) 100%);
-    --premium-gradient: linear-gradient(135deg, hsl(166 50% 48%) 0%, hsl(24 96% 53%) 100%);
+    --hero-gradient: linear-gradient(
+      135deg,
+      hsl(166 50% 48%) 0%,
+      hsl(166 52% 42%) 50%,
+      hsl(166 48% 38%) 100%
+    );
+    --accent-gradient: linear-gradient(
+      90deg,
+      hsl(24 96% 53%) 0%,
+      hsl(30 95% 58%) 50%,
+      hsl(35 95% 60%) 100%
+    );
+    --premium-gradient: linear-gradient(
+      135deg,
+      hsl(166 50% 48%) 0%,
+      hsl(24 96% 53%) 100%
+    );
     --overlay-dark: hsla(166 40% 12% / 0.88);
 
     --shadow-glow: 0 8px 32px hsla(24 96% 53% / 0.2);
     --shadow-glow-primary: 0 8px 32px hsla(166 50% 48% / 0.25);
     --shadow-card: 0 2px 16px hsla(166 40% 12% / 0.1);
-    --shadow-premium: 0 10px 40px -12px hsla(166 40% 12% / 0.15), 0 0 0 1px hsla(166 50% 48% / 0.05);
+    --shadow-premium:
+      0 10px 40px -12px hsla(166 40% 12% / 0.15),
+      0 0 0 1px hsla(166 50% 48% / 0.05);
 
     --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-spring: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -119,7 +134,8 @@ All colors MUST be HSL.
     --shadow-glow: 0 8px 32px hsla(24 96% 58% / 0.3);
     --shadow-glow-primary: 0 8px 32px hsla(166 52% 58% / 0.3);
     --shadow-card: 0 2px 16px hsla(0 0% 0% / 0.3);
-    --shadow-premium: 0 10px 40px -12px hsla(0 0% 0% / 0.4), 0 0 0 1px hsla(166 52% 58% / 0.1);
+    --shadow-premium:
+      0 10px 40px -12px hsla(0 0% 0% / 0.4), 0 0 0 1px hsla(166 52% 58% / 0.1);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -174,7 +190,8 @@ All colors MUST be HSL.
   button,
   a,
   [role="button"] {
-    transition: transform 0.2s ease-out,
+    transition:
+      transform 0.2s ease-out,
       background-color 0.3s ease-out,
       color 0.3s ease-out,
       border-color 0.3s ease-out;
@@ -190,7 +207,8 @@ All colors MUST be HSL.
   button:active,
   a:active,
   [role="button"]:active {
-    transition: transform 0.1s ease-out,
+    transition:
+      transform 0.1s ease-out,
       background-color 0.3s ease-out,
       color 0.3s ease-out;
   }
@@ -205,7 +223,7 @@ All colors MUST be HSL.
   }
 
   /* Subtle section spacing transitions */
-  section+section {
+  section + section {
     transition: margin-top 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -256,7 +274,6 @@ All colors MUST be HSL.
 
   /* Reduce motion for users who prefer it */
   @media (prefers-reduced-motion: reduce) {
-
     *,
     *::before,
     *::after {
@@ -328,7 +345,8 @@ All colors MUST be HSL.
     backdrop-filter: blur(24px) saturate(200%);
     -webkit-backdrop-filter: blur(24px) saturate(200%);
     border: 1px solid rgba(255, 255, 255, 0.22);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12),
+    box-shadow:
+      0 8px 32px 0 rgba(0, 0, 0, 0.12),
       inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
   }
 
@@ -337,7 +355,8 @@ All colors MUST be HSL.
     backdrop-filter: blur(24px) saturate(200%);
     -webkit-backdrop-filter: blur(24px) saturate(200%);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4),
+    box-shadow:
+      0 8px 32px 0 rgba(0, 0, 0, 0.4),
       inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
   }
 
@@ -347,19 +366,23 @@ All colors MUST be HSL.
     backdrop-filter: blur(24px) saturate(200%);
     -webkit-backdrop-filter: blur(24px) saturate(200%);
     border: 1px solid hsla(var(--primary) / 0.3);
-    box-shadow: 0 8px 32px 0 hsla(var(--primary) / 0.2),
+    box-shadow:
+      0 8px 32px 0 hsla(var(--primary) / 0.2),
       inset 0 1px 0 0 hsla(var(--primary) / 0.4);
   }
 
   /* Modern glass effect with gradient */
   .glass-gradient {
-    background: linear-gradient(135deg,
-        hsla(var(--primary) / 0.12) 0%,
-        hsla(var(--secondary) / 0.08) 100%);
+    background: linear-gradient(
+      135deg,
+      hsla(var(--primary) / 0.12) 0%,
+      hsla(var(--secondary) / 0.08) 100%
+    );
     backdrop-filter: blur(24px) saturate(200%);
     -webkit-backdrop-filter: blur(24px) saturate(200%);
     border: 1px solid hsla(var(--primary) / 0.2);
-    box-shadow: 0 8px 32px 0 hsla(var(--primary) / 0.15),
+    box-shadow:
+      0 8px 32px 0 hsla(var(--primary) / 0.15),
       inset 0 1px 0 0 hsla(var(--primary) / 0.3);
   }
 
@@ -401,7 +424,9 @@ All colors MUST be HSL.
 
   /* Premium card hover effect - Enhanced Hero UI */
   .card-hover {
-    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    transition:
+      transform 0.3s ease-out,
+      box-shadow 0.3s ease-out;
     will-change: transform;
     backface-visibility: hidden;
     transform: translateZ(0);
@@ -410,7 +435,8 @@ All colors MUST be HSL.
 
   .card-hover:hover {
     transform: translateY(-8px) translateZ(0);
-    box-shadow: 0 32px 64px -12px hsla(var(--foreground) / 0.25),
+    box-shadow:
+      0 32px 64px -12px hsla(var(--foreground) / 0.25),
       0 0 0 1px hsla(var(--primary) / 0.15),
       0 8px 24px -8px hsla(var(--primary) / 0.2);
   }
@@ -423,13 +449,15 @@ All colors MUST be HSL.
   }
 
   .card-gradient-border::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     border-radius: var(--radius);
     padding: 2px;
     background: var(--premium-gradient);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     opacity: 0;
@@ -444,7 +472,8 @@ All colors MUST be HSL.
   .scroll-reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
       transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
   }
@@ -466,7 +495,6 @@ All colors MUST be HSL.
   }
 
   @keyframes gradient-shift {
-
     0%,
     100% {
       background-position: 0% 50%;
@@ -484,23 +512,27 @@ All colors MUST be HSL.
 
   /* Modern glow effect - subtle */
   .glow-primary {
-    box-shadow: 0 0 16px hsla(var(--primary) / 0.2),
+    box-shadow:
+      0 0 16px hsla(var(--primary) / 0.2),
       0 0 32px hsla(var(--primary) / 0.15);
   }
 
   .glow-secondary {
-    box-shadow: 0 0 16px hsla(var(--secondary) / 0.2),
+    box-shadow:
+      0 0 16px hsla(var(--secondary) / 0.2),
       0 0 32px hsla(var(--secondary) / 0.15);
   }
 
   /* Premium text shadow */
   .text-shadow-premium {
-    text-shadow: 0 2px 8px hsla(var(--foreground) / 0.2),
+    text-shadow:
+      0 2px 8px hsla(var(--foreground) / 0.2),
       0 4px 16px hsla(var(--foreground) / 0.1);
   }
 
   .text-shadow-glow {
-    text-shadow: 0 0 20px hsla(var(--primary) / 0.5),
+    text-shadow:
+      0 0 20px hsla(var(--primary) / 0.5),
       0 0 40px hsla(var(--primary) / 0.3);
   }
 
@@ -511,16 +543,18 @@ All colors MUST be HSL.
   }
 
   .section-divider::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg,
-        transparent 0%,
-        hsl(var(--primary) / 0.3) 50%,
-        transparent 100%);
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--primary) / 0.3) 50%,
+      transparent 100%
+    );
   }
 
   /* Modern button glow */
@@ -530,7 +564,7 @@ All colors MUST be HSL.
   }
 
   .btn-glow::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -539,7 +573,9 @@ All colors MUST be HSL.
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.3);
     transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
+    transition:
+      width 0.6s,
+      height 0.6s;
   }
 
   .btn-glow:hover::before {
@@ -580,7 +616,8 @@ All colors MUST be HSL.
 
   /* Smooth link transitions */
   a {
-    transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    transition:
+      color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
       opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: color, opacity;
   }
@@ -588,7 +625,9 @@ All colors MUST be HSL.
   /* Better text rendering */
   body {
     text-rendering: optimizeLegibility;
-    font-feature-settings: "kern" 1, "liga" 1;
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -599,17 +638,20 @@ All colors MUST be HSL.
   }
 
   .shadow-premium-lg {
-    box-shadow: 0 16px 48px -12px hsla(var(--foreground) / 0.2),
+    box-shadow:
+      0 16px 48px -12px hsla(var(--foreground) / 0.2),
       0 0 0 1px hsla(var(--primary) / 0.08);
   }
 
   .shadow-premium-primary {
-    box-shadow: var(--shadow-glow-primary),
+    box-shadow:
+      var(--shadow-glow-primary),
       0 0 0 1px hsla(var(--primary) / 0.15);
   }
 
   .shadow-premium-secondary {
-    box-shadow: var(--shadow-glow),
+    box-shadow:
+      var(--shadow-glow),
       0 0 0 1px hsla(var(--secondary) / 0.15);
   }
 
@@ -652,16 +694,18 @@ All colors MUST be HSL.
 
   /* Clean section dividers */
   section::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg,
-        transparent 0%,
-        hsla(var(--primary) / 0.08) 50%,
-        transparent 100%);
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsla(var(--primary) / 0.08) 50%,
+      transparent 100%
+    );
     opacity: 0;
   }
 

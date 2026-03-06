@@ -1,5 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
@@ -36,7 +42,9 @@ export default function AccessGate({
     try {
       const saved = sessionStorage.getItem(storageKey);
       if (saved === "true") setUnlocked(true);
-    } catch { /* ignore */ }
+    } catch {
+      /* ignore */
+    }
   }, [storageKey]);
 
   useEffect(() => {
@@ -44,7 +52,9 @@ export default function AccessGate({
     if (unlocked) {
       try {
         sessionStorage.setItem(storageKey, "true");
-      } catch { /* ignore */ }
+      } catch {
+        /* ignore */
+      }
     }
   }, [isActive, storageKey, unlocked]);
 
@@ -60,7 +70,9 @@ export default function AccessGate({
       setUnlocked(true);
       try {
         sessionStorage.setItem(storageKey, "true");
-      } catch { /* ignore */ }
+      } catch {
+        /* ignore */
+      }
     } else {
       setError("Contraseña incorrecta");
     }
@@ -78,8 +90,12 @@ export default function AccessGate({
             />
           ) : null}
 
-          <CardTitle className="text-white text-center">{title || "Acceso"}</CardTitle>
-          <CardDescription className="text-center">{subtitle || "Ingresa la contraseña para continuar."}</CardDescription>
+          <CardTitle className="text-white text-center">
+            {title || "Acceso"}
+          </CardTitle>
+          <CardDescription className="text-center">
+            {subtitle || "Ingresa la contraseña para continuar."}
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={onSubmit} className="space-y-3">
@@ -90,9 +106,7 @@ export default function AccessGate({
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            {error ? (
-              <p className="text-sm text-red-500">{error}</p>
-            ) : null}
+            {error ? <p className="text-sm text-red-500">{error}</p> : null}
             <Button type="submit" className="w-full" disabled={!canSubmit}>
               Entrar
             </Button>

@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
             <img
-              src={theme === 'dark' ? logoDark : logoLight}
+              src={theme === "dark" ? logoDark : logoLight}
               alt="Logo Proyecto Quintauco"
               className="h-14 w-auto md:h-16 lg:h-18 object-contain"
             />
@@ -21,10 +21,10 @@ const Footer = () => {
 
           <div className="text-center md:text-right space-y-2">
             <p className="text-sm font-medium text-muted-foreground">
-              {t('footer.rights')}
+              {t("footer.rights")}
             </p>
             <p className="text-xs text-muted-foreground/70">
-              {t('footer.location')}
+              {t("footer.location")}
             </p>
           </div>
         </div>

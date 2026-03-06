@@ -12,13 +12,13 @@ const Condo = () => {
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <h3 className="text-xl md:text-2xl font-bold text-foreground dark:text-card-foreground mb-6">
-              {t('condo.valuePropTitle')}
+              {t("condo.valuePropTitle")}
             </h3>
             <h2 className="text-3xl md:text-4xl text-foreground dark:text-card-foreground mb-6">
-              {t('condo.mainTitle')}
+              {t("condo.mainTitle")}
             </h2>
             <p className="text-lg text-muted-foreground dark:text-muted-foreground">
-              {t('condo.description')}
+              {t("condo.description")}
             </p>
           </div>
 
@@ -34,7 +34,7 @@ const Condo = () => {
                 className="w-full h-full object-contain rounded-xl group-hover:scale-[1.02] transition-transform duration-600"
                 loading="lazy"
                 style={{
-                  maxHeight: '600px'
+                  maxHeight: "600px",
                 }}
               />
               {/* Expand icon in bottom right corner */}

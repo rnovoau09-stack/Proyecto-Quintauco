@@ -10,18 +10,21 @@ const Hero = () => {
   const { t } = useLanguage();
 
   const scrollToProyecto = () => {
-    smoothScrollToSection('proyecto', { offset: 100, duration: 900 });
+    smoothScrollToSection("proyecto", { offset: 100, duration: 900 });
   };
 
   const scrollToContacto = () => {
-    smoothScrollToSection('contacto', { offset: 100, duration: 900 });
+    smoothScrollToSection("contacto", { offset: 100, duration: 900 });
   };
 
   // Video local desde /public/hero-video.mp4
   const videoUrl = "/hero-video.mp4";
 
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Video Background */}
       <div className="absolute inset-0">
         {/* Video Element */}
@@ -32,8 +35,8 @@ const Hero = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
           style={{
-            objectFit: 'cover',
-            objectPosition: 'center',
+            objectFit: "cover",
+            objectPosition: "center",
           }}
           poster={hero1} // Fallback image while video loads
         >
@@ -61,20 +64,24 @@ const Hero = () => {
                 alt="Proyecto Quintauco"
                 className="h-16 sm:h-20 md:h-24 w-auto mx-auto"
                 style={{
-                  filter: 'drop-shadow(0 4px 20px rgba(0,0,0,0.4))',
+                  filter: "drop-shadow(0 4px 20px rgba(0,0,0,0.4))",
                 }}
               />
             </div>
 
             {/* Welcome Text */}
             <p className="text-white/90 text-xs sm:text-sm md:text-base font-semibold tracking-[0.2em] uppercase mb-4 sm:mb-6">
-              {t('hero.welcome') || 'Bienvenido a Proyecto Quintauco'}
+              {t("hero.welcome") || "Bienvenido a Proyecto Quintauco"}
             </p>
 
             {/* Main Headline - Bold and Impactful */}
-            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 sm:mb-10" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
-              {t('hero.headline1') || 'Vive la naturaleza'}<br />
-              {t('hero.headline2') || 'en su forma más pura'}
+            <h1
+              className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-8 sm:mb-10"
+              style={{ textShadow: "0 2px 20px rgba(0,0,0,0.5)" }}
+            >
+              {t("hero.headline1") || "Vive la naturaleza"}
+              <br />
+              {t("hero.headline2") || "en su forma más pura"}
             </h1>
 
             {/* CTA Buttons - Side by Side */}
@@ -85,7 +92,7 @@ const Hero = () => {
                 className="group min-w-[180px] bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold rounded-lg transition-all duration-300 hover:shadow-2xl"
               >
                 <span className="flex items-center gap-2">
-                  {t('hero.cta.explore') || 'Ver Proyecto'}
+                  {t("hero.cta.explore") || "Ver Proyecto"}
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Button>
@@ -98,7 +105,7 @@ const Hero = () => {
               >
                 <span className="flex items-center gap-2">
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-                  {t('hero.cta.contact') || 'Contacto'}
+                  {t("hero.cta.contact") || "Contacto"}
                 </span>
               </Button>
             </div>

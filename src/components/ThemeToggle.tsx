@@ -47,11 +47,7 @@ const ThemeToggle = () => {
           transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="absolute inset-0 flex items-center justify-center"
         >
-          {isDark ? (
-            <Sun className="h-5 w-5" />
-          ) : (
-            <Moon className="h-5 w-5" />
-          )}
+          {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
         </motion.div>
       </AnimatePresence>
     </Button>
@@ -59,5 +55,3 @@ const ThemeToggle = () => {
 };
 
 export default ThemeToggle;
-
-

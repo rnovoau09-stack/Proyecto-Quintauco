@@ -1,6 +1,13 @@
 import { Mountain, Key, MapPin, TrendingUp } from "lucide-react";
 import { Card } from "./ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "./ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from "./ui/carousel";
 import { useEffect, useState } from "react";
 import VistaDron5 from "@/assets/VistaDron5.JPG";
 import laguna from "@/assets/Laguna.png";
@@ -27,24 +34,24 @@ const Actividades = () => {
   const actividades = [
     {
       icon: Mountain,
-      titulo: t('activities.views.title'),
-      descripcion: t('activities.views.desc')
+      titulo: t("activities.views.title"),
+      descripcion: t("activities.views.desc"),
     },
     {
       icon: Key,
-      titulo: t('activities.access.title'),
-      descripcion: t('activities.access.desc')
+      titulo: t("activities.access.title"),
+      descripcion: t("activities.access.desc"),
     },
     {
       icon: MapPin,
-      titulo: t('activities.location.title'),
-      descripcion: t('activities.location.desc')
+      titulo: t("activities.location.title"),
+      descripcion: t("activities.location.desc"),
     },
     {
       icon: TrendingUp,
-      titulo: t('activities.value.title'),
-      descripcion: t('activities.value.desc')
-    }
+      titulo: t("activities.value.title"),
+      descripcion: t("activities.value.desc"),
+    },
   ];
 
   return (
@@ -59,8 +66,12 @@ const Actividades = () => {
                     <item.icon className="h-6 w-6 text-primary" />
                   </div>
                   <div className="space-y-1">
-                    <h3 className="text-xl font-bold text-foreground dark:text-card-foreground">{item.titulo}</h3>
-                    <p className="text-sm text-muted-foreground dark:text-muted-foreground">{item.descripcion}</p>
+                    <h3 className="text-xl font-bold text-foreground dark:text-card-foreground">
+                      {item.titulo}
+                    </h3>
+                    <p className="text-sm text-muted-foreground dark:text-muted-foreground">
+                      {item.descripcion}
+                    </p>
                   </div>
                 </div>
               </Card>
@@ -89,10 +100,10 @@ const Actividades = () => {
                     fetchPriority="high"
                     decoding="async"
                     style={{
-                      imageRendering: 'auto',
-                      WebkitBackfaceVisibility: 'hidden',
-                      backfaceVisibility: 'hidden',
-                      transform: 'translateZ(0)'
+                      imageRendering: "auto",
+                      WebkitBackfaceVisibility: "hidden",
+                      backfaceVisibility: "hidden",
+                      transform: "translateZ(0)",
                     }}
                   />
                 </div>
@@ -106,10 +117,10 @@ const Actividades = () => {
                     loading="lazy"
                     decoding="async"
                     style={{
-                      imageRendering: 'auto',
-                      WebkitBackfaceVisibility: 'hidden',
-                      backfaceVisibility: 'hidden',
-                      transform: 'translateZ(0)'
+                      imageRendering: "auto",
+                      WebkitBackfaceVisibility: "hidden",
+                      backfaceVisibility: "hidden",
+                      transform: "translateZ(0)",
                     }}
                   />
                 </div>
@@ -123,10 +134,10 @@ const Actividades = () => {
                     loading="lazy"
                     decoding="async"
                     style={{
-                      imageRendering: 'auto',
-                      WebkitBackfaceVisibility: 'hidden',
-                      backfaceVisibility: 'hidden',
-                      transform: 'translateZ(0)'
+                      imageRendering: "auto",
+                      WebkitBackfaceVisibility: "hidden",
+                      backfaceVisibility: "hidden",
+                      transform: "translateZ(0)",
                     }}
                   />
                 </div>
@@ -140,10 +151,10 @@ const Actividades = () => {
                     loading="lazy"
                     decoding="async"
                     style={{
-                      imageRendering: 'auto',
-                      WebkitBackfaceVisibility: 'hidden',
-                      backfaceVisibility: 'hidden',
-                      transform: 'translateZ(0)'
+                      imageRendering: "auto",
+                      WebkitBackfaceVisibility: "hidden",
+                      backfaceVisibility: "hidden",
+                      transform: "translateZ(0)",
                     }}
                   />
                 </div>
@@ -157,10 +168,10 @@ const Actividades = () => {
                     loading="lazy"
                     decoding="async"
                     style={{
-                      imageRendering: 'auto',
-                      WebkitBackfaceVisibility: 'hidden',
-                      backfaceVisibility: 'hidden',
-                      transform: 'translateZ(0)'
+                      imageRendering: "auto",
+                      WebkitBackfaceVisibility: "hidden",
+                      backfaceVisibility: "hidden",
+                      transform: "translateZ(0)",
                     }}
                   />
                 </div>
@@ -172,12 +183,14 @@ const Actividades = () => {
         </div>
 
         <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 md:p-12 text-center text-white mt-12">
-          <h3 className="text-3xl font-bold mb-4">{t('activities.cta.title')}</h3>
+          <h3 className="text-3xl font-bold mb-4">
+            {t("activities.cta.title")}
+          </h3>
           <p className="text-lg mb-2 text-white/90">
-            {t('activities.cta.subtitle')}
+            {t("activities.cta.subtitle")}
           </p>
           <p>
-            <strong>{t('activities.cta.text')}</strong>
+            <strong>{t("activities.cta.text")}</strong>
           </p>
         </div>
       </div>
@@ -186,5 +199,3 @@ const Actividades = () => {
 };
 
 export default Actividades;
-
-

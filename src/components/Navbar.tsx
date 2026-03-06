@@ -51,7 +51,8 @@ const Navbar = () => {
     const handleTouchStart = (e: TouchEvent) => {
       // Solo detectar swipe si comienza en el área del Sheet (lado izquierdo de la pantalla)
       const startX = e.touches[0].clientX;
-      if (startX < window.innerWidth * 0.3) { // Solo si el touch comienza en el 30% izquierdo
+      if (startX < window.innerWidth * 0.3) {
+        // Solo si el touch comienza en el 30% izquierdo
         touchStartRef.current = startX;
         touchStartXRef.current = startX;
       }
@@ -69,24 +70,29 @@ const Navbar = () => {
         e.preventDefault();
 
         // Buscar el elemento del SheetContent en el DOM (Radix UI usa [data-radix-dialog-content])
-        const sheetElement = document.querySelector('[data-radix-dialog-content]') as HTMLElement;
+        const sheetElement = document.querySelector(
+          "[data-radix-dialog-content]",
+        ) as HTMLElement;
         if (sheetElement) {
           // Aplicar transformación visual mientras se desliza
           const translateX = Math.min(diffX, window.innerWidth);
           sheetElement.style.transform = `translateX(${translateX}px)`;
-          sheetElement.style.transition = 'none';
+          sheetElement.style.transition = "none";
         }
       }
     };
 
     const handleTouchEnd = (e: TouchEvent) => {
-      if (touchStartRef.current === null || touchStartXRef.current === null) return;
+      if (touchStartRef.current === null || touchStartXRef.current === null)
+        return;
 
       const endX = e.changedTouches[0].clientX;
       const diffX = endX - touchStartXRef.current;
       const minSwipeDistance = 100; // Distancia mínima para considerar un swipe
 
-      const sheetElement = document.querySelector('[data-radix-dialog-content]') as HTMLElement;
+      const sheetElement = document.querySelector(
+        "[data-radix-dialog-content]",
+      ) as HTMLElement;
 
       if (diffX > minSwipeDistance && mobileMenuOpen) {
         // Cerrar el menú si el swipe es suficiente
@@ -95,8 +101,8 @@ const Navbar = () => {
 
       // Resetear la transformación
       if (sheetElement) {
-        sheetElement.style.transform = '';
-        sheetElement.style.transition = '';
+        sheetElement.style.transform = "";
+        sheetElement.style.transition = "";
       }
 
       touchStartRef.current = null;
@@ -104,14 +110,16 @@ const Navbar = () => {
     };
 
     // Añadir listeners al documento para capturar todos los toques
-    document.addEventListener('touchstart', handleTouchStart, { passive: false });
-    document.addEventListener('touchmove', handleTouchMove, { passive: false });
-    document.addEventListener('touchend', handleTouchEnd);
+    document.addEventListener("touchstart", handleTouchStart, {
+      passive: false,
+    });
+    document.addEventListener("touchmove", handleTouchMove, { passive: false });
+    document.addEventListener("touchend", handleTouchEnd);
 
     return () => {
-      document.removeEventListener('touchstart', handleTouchStart);
-      document.removeEventListener('touchmove', handleTouchMove);
-      document.removeEventListener('touchend', handleTouchEnd);
+      document.removeEventListener("touchstart", handleTouchStart);
+      document.removeEventListener("touchmove", handleTouchMove);
+      document.removeEventListener("touchend", handleTouchEnd);
     };
   }, [mobileMenuOpen]);
 
@@ -121,13 +129,13 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           <motion.div
             className="flex items-center gap-2 cursor-pointer"
-            onClick={() => navigateToSection('hero')}
+            onClick={() => navigateToSection("hero")}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
           >
             <img
-              src={theme === 'dark' ? logoDark : logoLight}
+              src={theme === "dark" ? logoDark : logoLight}
               alt="Logo Proyecto Quintauco"
               className="h-12 w-auto md:h-14 object-contain"
             />
@@ -137,44 +145,44 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-1">
               <motion.button
-                onClick={() => navigateToSection('hero')}
+                onClick={() => navigateToSection("hero")}
                 className="text-sm font-medium text-foreground/80 hover:text-primary px-3 py-2 rounded-md hover:bg-primary/5 transition-colors"
                 whileHover={{ y: -1 }}
                 transition={{ duration: 0.2 }}
               >
-                {t('nav.home')}
+                {t("nav.home")}
               </motion.button>
               <motion.button
-                onClick={() => navigateToSection('etapas')}
+                onClick={() => navigateToSection("etapas")}
                 className="text-sm font-medium text-foreground/80 hover:text-primary px-3 py-2 rounded-md hover:bg-primary/5 transition-colors"
                 whileHover={{ y: -1 }}
                 transition={{ duration: 0.2 }}
               >
-                {t('nav.park')}
+                {t("nav.park")}
               </motion.button>
               <motion.button
-                onClick={() => navigate('/condominio')}
+                onClick={() => navigate("/condominio")}
                 className="text-sm font-medium text-foreground/80 hover:text-primary px-3 py-2 rounded-md hover:bg-primary/5 transition-colors"
                 whileHover={{ y: -1 }}
                 transition={{ duration: 0.2 }}
               >
-                {t('nav.condo')}
+                {t("nav.condo")}
               </motion.button>
               <motion.button
-                onClick={() => navigate('/galeria')}
+                onClick={() => navigate("/galeria")}
                 className="text-sm font-medium text-foreground/80 hover:text-primary px-3 py-2 rounded-md hover:bg-primary/5 transition-colors"
                 whileHover={{ y: -1 }}
                 transition={{ duration: 0.2 }}
               >
-                {t('nav.gallery')}
+                {t("nav.gallery")}
               </motion.button>
               <motion.button
-                onClick={() => navigateToSection('contacto')}
+                onClick={() => navigateToSection("contacto")}
                 className="text-sm font-medium text-foreground/80 hover:text-primary px-3 py-2 rounded-md hover:bg-primary/5 transition-colors"
                 whileHover={{ y: -1 }}
                 transition={{ duration: 0.2 }}
               >
-                {t('nav.contact')}
+                {t("nav.contact")}
               </motion.button>
               <div className="mx-2 h-6 w-px bg-border" />
               <InquiryDialog
@@ -184,7 +192,7 @@ const Navbar = () => {
                     size="sm"
                     className="rounded-full px-5 shadow-md hover:shadow-lg"
                   >
-                    {t('nav.inquiry')}
+                    {t("nav.inquiry")}
                   </Button>
                 }
               />
@@ -194,11 +202,7 @@ const Navbar = () => {
             {!mobileMenuOpen ? (
               <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                 <SheetTrigger asChild className="md:hidden">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="relative"
-                  >
+                  <Button variant="ghost" size="icon" className="relative">
                     <Menu className="h-6 w-6" />
                     <span className="sr-only">Toggle menu</span>
                   </Button>
@@ -226,10 +230,13 @@ const Navbar = () => {
                   <div className="p-6 border-b border-border">
                     <div className="flex items-center justify-between mb-4">
                       <img
-                        src={theme === 'dark' ? logoDark : logoLight}
+                        src={theme === "dark" ? logoDark : logoLight}
                         alt="Logo Proyecto Quintauco"
                         className="h-12 w-auto object-contain transition-opacity duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                        style={{ transition: 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1)' }}
+                        style={{
+                          transition:
+                            "opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
+                        }}
                       />
                       <SheetClose asChild>
                         <Button
@@ -246,34 +253,42 @@ const Navbar = () => {
                   </div>
                   <div className="flex-1 overflow-y-auto p-6 space-y-2">
                     <button
-                      onClick={() => handleNavClick(() => navigateToSection('hero'))}
+                      onClick={() =>
+                        handleNavClick(() => navigateToSection("hero"))
+                      }
                       className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-300 font-semibold text-foreground"
                     >
-                      {t('nav.home')}
+                      {t("nav.home")}
                     </button>
                     <button
-                      onClick={() => handleNavClick(() => navigateToSection('etapas'))}
+                      onClick={() =>
+                        handleNavClick(() => navigateToSection("etapas"))
+                      }
                       className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-300 font-semibold text-foreground"
                     >
-                      {t('nav.park')}
+                      {t("nav.park")}
                     </button>
                     <button
-                      onClick={() => handleNavClick(() => navigate('/condominio'))}
+                      onClick={() =>
+                        handleNavClick(() => navigate("/condominio"))
+                      }
                       className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-300 font-semibold text-foreground"
                     >
-                      {t('nav.condo')}
+                      {t("nav.condo")}
                     </button>
                     <button
-                      onClick={() => handleNavClick(() => navigate('/galeria'))}
+                      onClick={() => handleNavClick(() => navigate("/galeria"))}
                       className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-300 font-semibold text-foreground"
                     >
-                      {t('nav.gallery')}
+                      {t("nav.gallery")}
                     </button>
                     <button
-                      onClick={() => handleNavClick(() => navigateToSection('contacto'))}
+                      onClick={() =>
+                        handleNavClick(() => navigateToSection("contacto"))
+                      }
                       className="w-full text-left px-4 py-3 rounded-lg hover:bg-primary/10 hover:text-primary transition-all duration-300 font-semibold text-foreground"
                     >
-                      {t('nav.contact')}
+                      {t("nav.contact")}
                     </button>
                     <div className="pt-4 border-t border-border mt-4">
                       <InquiryDialog
@@ -284,7 +299,7 @@ const Navbar = () => {
                             className="w-full rounded-full shadow-lg"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            {t('nav.inquiry')}
+                            {t("nav.inquiry")}
                           </Button>
                         }
                       />

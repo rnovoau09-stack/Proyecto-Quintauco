@@ -1,6 +1,6 @@
-# Bike Park Pioneer
+# Proyecto Quintauco
 
-Este proyecto es una aplicación web para la gestión y promoción de un parque de bicicletas (Bike Park) llamado "Pioneer". Incluye funcionalidades como presentación de actividades, información de condominios, contacto, mapas, galería y más.
+Este proyecto es una aplicación web para la gestión y promoción de un parque inmobiliario outdoor llamado "Quintauco". Incluye funcionalidades como presentación de actividades, información de condominios, contacto, mapas, galería y más.
 
 ## Características principales
 - Página principal con información del parque y actividades.
@@ -23,22 +23,6 @@ Este proyecto es una aplicación web para la gestión y promoción de un parque 
 - `public/` - Archivos públicos y recursos estáticos.
 - `supabase/` - Funciones y configuración de Supabase.
 
-## Instalación y uso
-1. Clona el repositorio:
-   ```bash
-   git clone <url-del-repo>
-   cd bike-park-pioneer-main
-   ```
-2. Instala las dependencias:
-   ```bash
-   npm install
-   ```
-3. Configura las variables de entorno necesarias para Supabase y EmailJS (ver documentación interna).
-4. Inicia el servidor de desarrollo:
-   ```bash
-   npm run dev
-   ```
-
 ## Dependencias principales
 - React
 - Vite
@@ -47,12 +31,7 @@ Este proyecto es una aplicación web para la gestión y promoción de un parque 
 - EmailJS
 
 ## Despliegue
-El proyecto está preparado para ser desplegado en Netlify u otras plataformas compatibles con Vite.
-
-## Seguridad y buenas prácticas
-- **No subas archivos con credenciales sensibles** (API keys, secretos, etc.) al repositorio público.
-- Revisa que los archivos de configuración (como `.env`) estén en `.gitignore`.
-- El código fuente actual parece seguro para subir a GitHub **siempre y cuando no incluyas archivos de configuración sensibles**.
+El proyecto está desplegado en Netlify. (www.quintauco.cl)
 
 ## Licencia
 [MIT](LICENSE)
