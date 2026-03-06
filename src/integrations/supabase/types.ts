@@ -14,20 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      contact_requests: {
+      subscription: {
+        Row: {
+          id: string
+          email: string
+        }
+        Insert: {
+          id?: string
+          email: string
+        }
+        Update: {
+          id?: string
+          email?: string
+        }
+        Relationships: []
+      },
+      survey: {
+        Row: {
+          id: string
+          created_at: string
+          trail_types: string[]
+          activities: string
+          other_trail: string | null
+        }
+        Insert: {
+          id?: string
+          created_at?: string
+          trail_types: string[]
+          activities: string
+          other_trail?: string | null
+        }
+        Update: {
+          id?: string
+          created_at?: string
+          trail_types?: string[]
+          activities?: string
+          other_trail?: string | null
+        }
+        Relationships: []
+      },
+      solicitudes: {
         Row: {
           id: string
           created_at: string
           name: string
           email: string
+          phone: string
           message: string
+          tipo_consulta: 'inmobiliaria' | 'parque'
         }
         Insert: {
           id?: string
           created_at?: string
           name: string
           email: string
+          phone: string
           message: string
+          tipo_consulta: 'inmobiliaria' | 'parque'
         }
         Update: {
           id?: string

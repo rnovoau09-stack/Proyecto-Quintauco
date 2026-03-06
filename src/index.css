@@ -7,47 +7,79 @@ All colors MUST be HSL.
 */
 
 @layer base {
+  /* Theme transition class - instant theme changes */
+  .theme-transition,
+  .theme-transition *,
+  .theme-transition *::before,
+  .theme-transition *::after {
+    transition: none !important;
+  }
+
   :root {
-    --background: 42 32% 95%;
-    --foreground: 155 35% 15%;
+    --background: 45 30% 98%;
+    --foreground: 166 40% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 155 35% 15%;
+    --card-foreground: 166 40% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 155 35% 15%;
+    --popover-foreground: 166 40% 12%;
 
-    --primary: 155 45% 25%;
-    --primary-foreground: 42 85% 95%;
+    --primary: 166 50% 48%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 24 95% 55%;
+    --primary-dark: 163 35% 18%;
+    --primary-dark-foreground: 0 0% 100%;
+
+    --secondary: 24 96% 53%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 42 30% 88%;
-    --muted-foreground: 155 20% 45%;
+    --muted: 45 25% 92%;
+    --muted-foreground: 166 25% 40%;
 
-    --accent: 175 65% 45%;
+    --accent: 166 48% 42%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 42 25% 85%;
-    --input: 42 25% 90%;
-    --ring: 155 45% 25%;
+    --border: 45 20% 88%;
+    --input: 45 20% 93%;
+    --ring: 166 50% 48%;
 
-    --radius: 0.75rem;
-    
-    /* Custom design tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(155 45% 25%) 0%, hsl(155 55% 35%) 50%, hsl(175 65% 45%) 100%);
-    --accent-gradient: linear-gradient(90deg, hsl(24 95% 55%) 0%, hsl(45 95% 60%) 100%);
-    --overlay-dark: hsla(155 35% 15% / 0.85);
-    
-    --shadow-glow: 0 10px 40px hsla(24 95% 55% / 0.25);
-    --shadow-card: 0 4px 20px hsla(155 35% 15% / 0.1);
-    
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --radius: 0.875rem;
+
+    /* Enhanced design tokens - Modern Hero UI */
+    --hero-gradient: linear-gradient(
+      135deg,
+      hsl(166 50% 48%) 0%,
+      hsl(166 52% 42%) 50%,
+      hsl(166 48% 38%) 100%
+    );
+    --accent-gradient: linear-gradient(
+      90deg,
+      hsl(24 96% 53%) 0%,
+      hsl(30 95% 58%) 50%,
+      hsl(35 95% 60%) 100%
+    );
+    --premium-gradient: linear-gradient(
+      135deg,
+      hsl(166 50% 48%) 0%,
+      hsl(24 96% 53%) 100%
+    );
+    --overlay-dark: hsla(166 40% 12% / 0.88);
+
+    --shadow-glow: 0 8px 32px hsla(24 96% 53% / 0.2);
+    --shadow-glow-primary: 0 8px 32px hsla(166 50% 48% / 0.25);
+    --shadow-card: 0 2px 16px hsla(166 40% 12% / 0.1);
+    --shadow-premium:
+      0 10px 40px -12px hsla(166 40% 12% / 0.15),
+      0 0 0 1px hsla(166 50% 48% / 0.05);
+
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-spring: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-slow: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -67,35 +99,43 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 155 35% 8%;
-    --foreground: 42 85% 95%;
+    --background: 166 38% 6%;
+    --foreground: 45 30% 98%;
 
-    --card: 155 30% 12%;
-    --card-foreground: 42 85% 95%;
+    --card: 166 32% 10%;
+    --card-foreground: 45 30% 98%;
 
-    --popover: 155 30% 12%;
-    --popover-foreground: 42 85% 95%;
+    --popover: 166 32% 10%;
+    --popover-foreground: 45 30% 98%;
 
-    --primary: 175 65% 55%;
-    --primary-foreground: 155 35% 8%;
+    --primary: 166 52% 58%;
+    --primary-foreground: 166 38% 6%;
 
-    --secondary: 24 95% 55%;
+    --primary-dark: 163 35% 22%;
+    --primary-dark-foreground: 0 0% 100%;
+
+    --secondary: 24 96% 58%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 155 25% 18%;
-    --muted-foreground: 42 30% 65%;
+    --muted: 166 28% 16%;
+    --muted-foreground: 45 25% 70%;
 
-    --accent: 175 65% 45%;
+    --accent: 166 50% 52%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 155 25% 20%;
-    --input: 155 25% 18%;
-    --ring: 175 65% 55%;
-    
-    --overlay-dark: hsla(155 35% 8% / 0.9);
+    --border: 166 28% 18%;
+    --input: 166 28% 16%;
+    --ring: 166 52% 58%;
+
+    --overlay-dark: hsla(166 38% 6% / 0.92);
+    --shadow-glow: 0 8px 32px hsla(24 96% 58% / 0.3);
+    --shadow-glow-primary: 0 8px 32px hsla(166 52% 58% / 0.3);
+    --shadow-card: 0 2px 16px hsla(0 0% 0% / 0.3);
+    --shadow-premium:
+      0 10px 40px -12px hsla(0 0% 0% / 0.4), 0 0 0 1px hsla(166 52% 58% / 0.1);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -114,26 +154,562 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    /* Optimize scroll performance */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
   }
-  
+
   html {
-    scroll-behavior: smooth;
+    /* Use 'auto' for programmatic scrolling - we handle smooth scrolling via JS for better control */
+    scroll-behavior: auto;
+    scroll-padding-top: 100px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: smooth;
+  }
+
+  /* Enhanced smooth scrolling with momentum and performance optimizations */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      /* Smooth scrolling handled by JavaScript utility for better control */
+      scroll-behavior: auto;
+      scroll-padding-top: 100px;
+    }
+
+    * {
+      scroll-margin-top: 100px;
+    }
+  }
+
+  /* Optimize animations for performance */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Smooth transitions for all interactive elements */
+  button,
+  a,
+  [role="button"] {
+    transition:
+      transform 0.2s ease-out,
+      background-color 0.3s ease-out,
+      color 0.3s ease-out,
+      border-color 0.3s ease-out;
+  }
+
+  /* Prevent layout shifts during animations */
+  img,
+  video {
+    content-visibility: auto;
+  }
+
+  /* Exclude elements that shouldn't transition (like buttons during active state) */
+  button:active,
+  a:active,
+  [role="button"]:active {
+    transition:
+      transform 0.1s ease-out,
+      background-color 0.3s ease-out,
+      color 0.3s ease-out;
+  }
+
+  /* Premium smooth section transitions - optimized for scroll performance */
+  section {
+    /* Remove transform transitions during scroll for better performance */
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity;
+    /* Use contain for better scroll performance - layout and style only for smoother scrolling */
+    contain: layout style;
+  }
+
+  /* Subtle section spacing transitions */
+  section + section {
+    transition: margin-top 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* High quality image rendering - prevents pixelation */
+  img {
+    image-rendering: auto;
+    -ms-interpolation-mode: bicubic;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+    /* Prevent pixelation on high DPI displays */
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+  }
+
+  /* Ensure images maintain quality on scale and transform */
+  img[class*="object-cover"],
+  img[class*="object-contain"],
+  img[class*="scale"],
+  img[class*="hover:scale"] {
+    image-rendering: auto;
+    -ms-interpolation-mode: bicubic;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  /* Background images quality - for img elements used as backgrounds */
+  img[class*="object-cover"][class*="absolute"],
+  img[class*="object-cover"][class*="inset"] {
+    image-rendering: auto;
+    -ms-interpolation-mode: bicubic;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: opacity, transform;
+  }
+
+  /* Ensure background images maintain quality */
+  [style*="background-image"] {
+    image-rendering: auto;
+    -ms-interpolation-mode: bicubic;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
 @layer utilities {
   .animate-fade-in {
-    animation: fadeIn 1s ease-out;
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
   }
 
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(25px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  /* Smooth scale animation */
+  .animate-scale-in {
+    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Smooth slide animations */
+  .animate-slide-up {
+    animation: slideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Premium glassmorphism effect - Modern Hero UI */
+  .glass {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow:
+      0 8px 32px 0 rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow:
+      0 8px 32px 0 rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  }
+
+  /* Premium glass effect with primary color */
+  .glass-primary {
+    background: hsla(var(--primary) / 0.15);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid hsla(var(--primary) / 0.3);
+    box-shadow:
+      0 8px 32px 0 hsla(var(--primary) / 0.2),
+      inset 0 1px 0 0 hsla(var(--primary) / 0.4);
+  }
+
+  /* Modern glass effect with gradient */
+  .glass-gradient {
+    background: linear-gradient(
+      135deg,
+      hsla(var(--primary) / 0.12) 0%,
+      hsla(var(--secondary) / 0.08) 100%
+    );
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid hsla(var(--primary) / 0.2);
+    box-shadow:
+      0 8px 32px 0 hsla(var(--primary) / 0.15),
+      inset 0 1px 0 0 hsla(var(--primary) / 0.3);
+  }
+
+  /* Modern gradient text - Enhanced Hero UI */
+  .gradient-text {
+    background: var(--premium-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  .gradient-text-primary {
+    background: var(--hero-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-accent {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Smooth scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Premium card hover effect - Enhanced Hero UI */
+  .card-hover {
+    transition:
+      transform 0.3s ease-out,
+      box-shadow 0.3s ease-out;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px) translateZ(0);
+    box-shadow:
+      0 32px 64px -12px hsla(var(--foreground) / 0.25),
+      0 0 0 1px hsla(var(--primary) / 0.15),
+      0 8px 24px -8px hsla(var(--primary) / 0.2);
+  }
+
+  /* Modern card with gradient border */
+  .card-gradient-border {
+    position: relative;
+    background: hsl(var(--card));
+    border-radius: var(--radius);
+  }
+
+  .card-gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+    padding: 2px;
+    background: var(--premium-gradient);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .card-gradient-border:hover::before {
+    opacity: 1;
+  }
+
+  /* Smooth scroll reveal with intersection observer */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Parallax effect for background elements */
+  .parallax-slow {
+    transition: transform 0.1s ease-out;
+  }
+
+  /* Smooth gradient transitions */
+  .gradient-transition {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Premium subtle fade transitions between sections - Removed to avoid conflicts with Framer Motion */
+  /* Animation is now handled by FadeIn component */
+
+  /* Smooth section entry with scroll reveal - Handled by Framer Motion now */
+
+  /* Modern glow effect - subtle */
+  .glow-primary {
+    box-shadow:
+      0 0 16px hsla(var(--primary) / 0.2),
+      0 0 32px hsla(var(--primary) / 0.15);
+  }
+
+  .glow-secondary {
+    box-shadow:
+      0 0 16px hsla(var(--secondary) / 0.2),
+      0 0 32px hsla(var(--secondary) / 0.15);
+  }
+
+  /* Premium text shadow */
+  .text-shadow-premium {
+    text-shadow:
+      0 2px 8px hsla(var(--foreground) / 0.2),
+      0 4px 16px hsla(var(--foreground) / 0.1);
+  }
+
+  .text-shadow-glow {
+    text-shadow:
+      0 0 20px hsla(var(--primary) / 0.5),
+      0 0 40px hsla(var(--primary) / 0.3);
+  }
+
+  /* Modern section divider */
+  .section-divider {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-divider::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--primary) / 0.3) 50%,
+      transparent 100%
+    );
+  }
+
+  /* Modern button glow */
+  .btn-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-glow::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition:
+      width 0.6s,
+      height 0.6s;
+  }
+
+  .btn-glow:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Smooth scroll behavior - handled by JavaScript utility for better performance and control */
+  /* Native scroll-behavior: smooth is replaced by our custom smoothScroll utility */
+
+  /* Enhanced focus states for accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+    border-radius: 4px;
+    transition: outline 0.2s ease;
+  }
+
+  /* Smooth image loading only - no theme transitions for instant theme changes */
+
+  img[loading="lazy"] {
+    opacity: 0;
+    animation: fadeInImage 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    will-change: opacity;
+  }
+
+  @keyframes fadeInImage {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Improved button interactions */
+  button:active {
+    transform: scale(0.97) translateZ(0);
+    transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Smooth link transitions */
+  a {
+    transition:
+      color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: color, opacity;
+  }
+
+  /* Better text rendering */
+  body {
+    text-rendering: optimizeLegibility;
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Simplified shadow utilities */
+  .shadow-premium {
+    box-shadow: var(--shadow-premium);
+  }
+
+  .shadow-premium-lg {
+    box-shadow:
+      0 16px 48px -12px hsla(var(--foreground) / 0.2),
+      0 0 0 1px hsla(var(--primary) / 0.08);
+  }
+
+  .shadow-premium-primary {
+    box-shadow:
+      var(--shadow-glow-primary),
+      0 0 0 1px hsla(var(--primary) / 0.15);
+  }
+
+  .shadow-premium-secondary {
+    box-shadow:
+      var(--shadow-glow),
+      0 0 0 1px hsla(var(--secondary) / 0.15);
+  }
+
+  /* Smooth scroll with momentum - handled by JavaScript for better control */
+  html {
+    scroll-behavior: auto;
+    scroll-padding-top: 100px;
+    overscroll-behavior-y: smooth;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Premium section spacing */
+  section {
+    position: relative;
+    isolation: isolate;
+  }
+
+  /* Subtle parallax container */
+  .parallax-container {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  /* Smooth section background transitions */
+  section {
+    background-attachment: scroll;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* Enhanced scroll behavior for sections - removed scroll-snap for smoother free scrolling */
+  /* Scroll snapping can feel jarring - removed for better user experience */
+  /* Users can still use our smooth scroll utility for programmatic navigation */
+
+  /* Clean section dividers */
+  section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsla(var(--primary) / 0.08) 50%,
+      transparent 100%
+    );
+    opacity: 0;
+  }
+
+  section:not(:first-child)::before {
+    opacity: 1;
   }
 }

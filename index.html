@@ -4,20 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Proyecto Quintauco</title>
-    <meta name="description" content="Proyecto Quintauco - 385 hectáreas de naturaleza y adrenalina en Quintero. Proyecto de bike park con pistas de downhill, MTB y actividades outdoor en Región de Valparaíso, Chile." />
+    <meta
+      name="description"
+      content="Proyecto Quintauco - 385 hectáreas de naturaleza y adrenalina en Quintero. Proyecto de bike park con pistas de downhill, MTB y actividades outdoor en Región de Valparaíso, Chile."
+    />
     <meta name="author" content="Inversiones Yellowstone SpA" />
+    <link rel="icon" href="/mountain.svg" type="image/svg+xml" />
 
-    <meta property="og:title" content="Proyecto Quintauco | Bike Park Quintero" />
-    <meta property="og:description" content="Destino outdoor de referencia en Valparaíso con pistas de downhill, MTB, trekking y trail running. 385 hectáreas de aventura en Quintero." />
+    <meta
+      property="og:title"
+      content="Proyecto Quintauco | Bike Park Quintero"
+    />
+    <meta
+      property="og:description"
+      content="Destino outdoor de referencia en Valparaíso con pistas de downhill, MTB, trekking y trail running. 385 hectáreas de aventura en Quintero."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
   </head>
 
   <body>
+    <script>
+      (function () {
+        try {
+          var storageKey = "theme";
+          var persisted = localStorage.getItem(storageKey);
+          var mql =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)");
+          var systemPrefersDark = mql && mql.matches;
+          var isDark = persisted ? persisted === "dark" : systemPrefersDark;
+          var doc = document.documentElement;
+          if (isDark) {
+            doc.classList.add("dark");
+          } else {
+            doc.classList.remove("dark");
+          }
+        } catch (_) {}
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

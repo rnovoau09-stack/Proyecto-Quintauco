@@ -1,24 +1,30 @@
-import { Mountain } from "lucide-react";
+import logoLight from "@/assets/LogoNegroSinFondoSinSub.png";
+import logoDark from "@/assets/LogoSinFondoSinSub.png";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/hooks/use-theme";
+import { motion } from "framer-motion";
 
 const Footer = () => {
+  const { t } = useLanguage();
+  const { theme } = useTheme();
   return (
-    <footer className="bg-card border-t border-border py-12">
+    <footer className="bg-card border-t border-border py-16">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <Mountain className="h-8 w-8 text-primary" />
-            <div className="flex flex-col">
-              <span className="font-bold text-lg leading-none text-foreground">Proyecto</span>
-              <span className="text-xs text-muted-foreground">Quintauco</span>
-            </div>
+          <div className="flex items-center gap-3">
+            <img
+              src={theme === "dark" ? logoDark : logoLight}
+              alt="Logo Proyecto Quintauco"
+              className="h-14 w-auto md:h-16 lg:h-18 object-contain"
+            />
           </div>
 
-          <div className="text-center md:text-right">
-            <p className="text-sm text-muted-foreground">
-              © 2025 Inversiones Yellowstone SpA. Todos los derechos reservados.
+          <div className="text-center md:text-right space-y-2">
+            <p className="text-sm font-medium text-muted-foreground">
+              {t("footer.rights")}
             </p>
-            <p className="text-xs text-muted-foreground mt-1">
-              Quintero, Región de Valparaíso, Chile
+            <p className="text-xs text-muted-foreground/70">
+              {t("footer.location")}
             </p>
           </div>
         </div>
